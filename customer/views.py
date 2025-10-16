@@ -102,17 +102,6 @@ from django.contrib.auth.models import Group
 from .models import Order, Visitor, Customer, Notice
 from .decorators import allowed_users  # adjust if needed
 
-from django.contrib.auth import get_user_model
-
-User = get_user_model()
-
-# Auto-create admin user if missing (temporary)
-if not User.objects.filter(username="DNY").exists():
-    User.objects.create_superuser(
-        username="DNY",
-        email="tiwoadex@gmail.com",
-        password="Kabiru123"
-    )
 
 
 def get_week_range(year, week):
